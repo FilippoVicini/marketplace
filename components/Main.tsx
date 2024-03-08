@@ -9,7 +9,7 @@ export default function Main() {
         { id: 3, title: "Card 3", description: "This is card 3 description.", quantity: 5 },
     ]);
 
-    const handleBuy = (id) => {
+    const handleBuy = (id: number) => {
         const newCardsData = cardsData.map(card => {
             if (card.id === id && card.quantity > 0) {
                 return { ...card, quantity: card.quantity - 1 };
@@ -19,7 +19,7 @@ export default function Main() {
         setCardsData(newCardsData);
     };
 
-    const handleSell = (id) => {
+    const handleSell = (id: number) => {
         const newCardsData = cardsData.map(card => {
             if (card.id === id) {
                 return { ...card, quantity: card.quantity + 1 };
